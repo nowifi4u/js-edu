@@ -9,6 +9,11 @@ module.exports = function getTimeForEducation(
     knowsProgramming = true,
     config = {family: 4}
     ) {
-      return 0;
+      const speedOne = 800;
+      const doesntKnowProgCoef = 1.625;
+
+      let result = speedOne / config[focus];
+      if (knowsProgramming === false) result *= doesntKnowProgCoef;
+      return Math.ceil(result);
   };
   
